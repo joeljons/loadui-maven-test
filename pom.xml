@@ -10,7 +10,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>SmartBearPluginRepository</id>
-            <url>http://smartbearsoftware.com/repository/maven2</url>
+            <url>http://nexus.sthlm.smartbear.local/service/local/repositories/next/content</url>
         </pluginRepository>
     </pluginRepositories>
 
