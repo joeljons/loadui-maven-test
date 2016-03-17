@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>my-app</name>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>SmartBearPluginRepository</id>
+            <url>http://smartbearsoftware.com/repository/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.smartbear</groupId>
+                <artifactId>ready-api-maven-plugin</artifactId>
+                <version>1.7.0-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>loadtest</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Specifies the number of virtual users to simulate. Has no effect if "Per Scenario" load distribution is used.-->
+                            <!--<users></users>-->
+
+                            <!-- Specifies the statistics groups to be included in the report. -->
+                            <!--<statistics><statistic></statistic><statistic></statistic></statistics>-->
+
+                            <!-- Commands the runner to generate reports and to save them to the specified folder. -->
+                            <!--<reports>my-report-folder</reports>-->
+
+                            <!-- Specifies limits for the test run. Syntax: <SECONDS>:<TARGETS>:<FAILURES> (e.g. 60:0:200) -->
+                            <!-- Overridden if time constraints are defined within the project. -->
+                            <!--<limits></limits>-->
+
+                            <!-- Commands the runner to export data of statistics groups to .CVS files. Syntax: <FileName>=<StatGroupName> -->
+                            <!--<export><export></export><export></export></export>-->
+
+                            <!--Specifies if the runner terminates requests running at the moment the test is stopped. If-->
+                            <!--true, ongoing requests will be cancelled, otherwise the test will finish when all ongoing-->
+                            <!--requests are completed. If it is not set, the project property is used.-->
+                            <!--<abort></abort>-->
+
+                            <!-- Simulates load from the local computer. If not specified, the runner will use the configured agents. -->
+                            <!--<local></local>-->
+
+                            <!-- Specifies the remote agents to be used for the test run. Syntax: <ip>[:<port>]=<scenario>) -->
+                            <!--<agents><property><name></name><value></value></property></agents>-->
+
+                            <!-- The Ready Api project file to test with -->
+                            <projectFile>${project.basedir}/sample-load-project.xml</projectFile>
+
+                            <!-- The name of the LoadTest to run -->
+                            <loadTest>LoadUI NG Test 1</loadTest>
+
+                            <!-- Specifies SoapUI settings file to use -->
+                            <!--<settingsFile></settingsFile>-->
+
+                            <!--Specifies password for encrypted SoapUI project file-->
+                            <!--<projectPassword></projectPassword>-->
+
+                            <!--Specifies password for encrypted soapui-settings file-->
+                            <!--<settingsPassword></settingsPassword>-->
+
+                            <!-- Specifies the value of a global property for the test run -->
+                            <!--<globalProperties><globalProperty></globalProperty><globalProperty></globalProperty></globalProperties>-->
+
+                            <!-- Specified project property values -->
+                            <!--<projectProperties><projectProperty></projectProperty><projectProperty></projectProperty></projectProperties>-->
+
+                            <!-- Creates reports in specified formats -->
+                            <!--<reportFormat>PDF</reportFormat>-->
+
+                            <!-- Do not send usage statistics. -->
+                            <!--<optOutUsageStatistics></optOutUsageStatistics>-->
+
+                            <!-- Set up the environment -->
+                            <!--<environment></environment>-->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
