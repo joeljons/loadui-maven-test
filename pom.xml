@@ -19,7 +19,7 @@
             <plugin>
                 <groupId>com.smartbear</groupId>
                 <artifactId>ready-api-maven-plugin</artifactId>
-                <version>1.6.0-m-SNAPSHOT</version>
+                <version>1.7.0-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <phase>test</phase>
