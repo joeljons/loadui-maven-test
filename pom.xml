@@ -7,13 +7,6 @@
     <version>1.0-SNAPSHOT</version>
     <name>my-app</name>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>SmartBearPluginRepository</id>
-            <url>http://nexus.sthlm.smartbear.local/service/local/repositories/next/content</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <build>
         <plugins>
             <plugin>
